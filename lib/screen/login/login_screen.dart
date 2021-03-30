@@ -1,17 +1,16 @@
-import 'dart:async';
-import 'package:demo_get/personal/personal_controller.dart';
+import 'package:demo_get/controllers/personal_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 
-import 'login_controller.dart';
+import '../../controllers/login_controller.dart';
 
 // ignore: must_be_immutable
 class LoginScreen extends GetWidget<LoginController> {
  
   @override
   Widget build(BuildContext context, {controllerSuper}) {
-   PersonalController c = Get.put(PersonalController());
+   PersonalController c = Get.find();
    LoginController c2 = Get.put(LoginController());
     return Scaffold(
       body: Container(
@@ -20,7 +19,7 @@ class LoginScreen extends GetWidget<LoginController> {
           children: <Widget>[
             Container(
               child:  Obx(
-                      () => Text('Obx: ${c.count.value}')
+                      () => Text('Obx: ${c.count}')
               ),
             ),
             TextButton(onPressed: (){
@@ -28,7 +27,8 @@ class LoginScreen extends GetWidget<LoginController> {
             }, child: Text("COUNT")),
             TextButton(onPressed: (){
               Get.back();
-            }, child: Text("BACK"))
+            }, child: Text("BACK")),
+            Obx (() => Text ("${c2.name}")),
           ],
         ),
       ),
