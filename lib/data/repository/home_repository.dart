@@ -1,5 +1,3 @@
-
-
 import 'package:demo_get/data/provider/home_api_provider.dart';
 import 'package:demo_get/data/modal/cases_model.dart';
 import 'package:flutter/foundation.dart';

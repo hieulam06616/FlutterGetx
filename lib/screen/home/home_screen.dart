@@ -3,11 +3,10 @@ import 'package:demo_get/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
 class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
-      // HomeController c = Get.put(HomeController());
+    HomeController controller = Get.put(HomeController());
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -26,8 +25,8 @@ class HomeView extends GetView<HomeController> {
           elevation: 0,
           centerTitle: true,
         ),
-        body:  Container(
-              child: Obx(() => Text('Obx: ${controller.count}')),
+        body: Container(
+            // child: Obx(() => Text('Obx: ${controller.count}')),
             ),
       ),
     );

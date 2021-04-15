@@ -1,5 +1,6 @@
 import 'package:demo_get/routes/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -7,10 +8,12 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  static const platform = const MethodChannel('com.example.demo_get');
+
   @override
   Widget build(BuildContext context) {
-   
     print("locale: Get.deviceLocale, ${Get.deviceLocale}");
+    platform.invokeMethod('getBatteryLevel');
     return GetMaterialApp(
       title: '',
       debugShowCheckedModeBanner: false,

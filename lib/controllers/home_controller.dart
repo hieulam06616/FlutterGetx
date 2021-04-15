@@ -4,18 +4,19 @@ import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   HomeController({this.repository});
- final IHomeRepository repository;
+  final IHomeRepository repository;
 
- int count =1;
+  int count = 1;
   @override
   void onInit() {
     super.onInit();
 
     //Loading, Success, Error handle with 1 line of code
-    repository.getCases();
+    // repository.getCases();
     //  append(() => homeRepository.getCases); //2
   }
- @override
+
+  @override
   void onReady() {
     print('The build method is done. '
         'Your controller is ready to call dialogs and snackbars');
